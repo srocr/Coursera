@@ -6,14 +6,17 @@
   function tooMuchFoodController ($scope){
     $scope.checkIfTooMuch = function(){
       if(!$scope.dishes){
-        $scope.message = "Please enter data first!";
+        $scope.messageInfo = {text :"Please enter data first!", color : "text-danger"};
         return;
       }
       var count = countDishes();
       if(count <= 3){
-        $scope.message = "Enjoy!";
+        $scope.messageInfo = {text :"Enjoy!", color: "text-success bg-success"};
       }else{
-        $scope.message = "Too much!";
+        $scope.messageInfo = {text:"Too much!", color: "text-danger bg-danger"};
+      }
+      if( $scope.dishes.split(',').length != count){
+          $scope.messageInfo.text+=" (Empty text will not be considered a valid entry!)"
       }
     }
 
