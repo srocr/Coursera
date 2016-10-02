@@ -22,7 +22,7 @@
     <br/><br/><br/>
 
     <div>
-      <div ng-show="narrowCtrl.found.length == 0 || !narrowCtrl.searchTerm ">No results!</div>
+      <div ng-show="narrowCtrl.found.length == 0">No results!</div>
       <div ng-show="narrowCtrl.found.length > 0 && narrowCtrl.searchTerm">
 
       <found-item found-items="narrowCtrl.found" on-remove="narrowCtrl.remove(index)"></found-item>
