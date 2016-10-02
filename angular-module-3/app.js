@@ -50,7 +50,7 @@
       scope:{
         foundItems : "<",
         onRemove : "&"
-      // },
+      }//,
       // controller: FoundItemsController,
       // controllerAs: 'foundItemsCtrl',
       // bindToController: true
