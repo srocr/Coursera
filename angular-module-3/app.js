@@ -52,7 +52,7 @@
         onRemove : "&"
       },
       controller: FoundItemsController,
-      controllerAs: foundItemsCtrl,
+      controllerAs: 'foundItemsCtrl',
       bindToController: true
     }
     return ddo;
