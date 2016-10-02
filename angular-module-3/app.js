@@ -11,7 +11,6 @@
   function NarrowItDownController(MenuSearchService, $filter){
     var narrowCtrl = this;
     narrowCtrl.narrow = function(){
-      console.log("clicked");
       MenuSearchService.getMatchedMenuItems()
       .then(function(response){
         narrowCtrl.found = filterDown(response.data.menu_items);
@@ -25,6 +24,7 @@
       if(narrowCtrl.searchTerm){
         return $filter("filter")(array, {description:narrowCtrl.searchTerm});
       }else{
+        narrowCtrl.message = "Nothing found!";
         return [];
       }
     };
