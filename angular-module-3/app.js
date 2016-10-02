@@ -50,15 +50,15 @@
       scope:{
         foundItems : "<",
         onRemove : "&"
-      },
+      }/*,
       controller: FoundItemsController,
       controllerAs: foundItemsCtrl,
-      bindToController: true
+      bindToController: true*/
     }
     return ddo;
   };
 
-  function FoundItemsController(){
+  /*function FoundItemsController(){
     var foundItemsCtrl = this;
-  };
+  };*/
 })();
