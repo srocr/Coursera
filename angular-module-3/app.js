@@ -22,12 +22,14 @@
     };
 
     function filterDown(array){
+      var filtered;
       if(narrowCtrl.searchTerm){
-        return $filter("filter")(array, {description:narrowCtrl.searchTerm});
-      }else{
+        filtered =  $filter("filter")(array, {description:narrowCtrl.searchTerm});
+      }if(filtered.length == 0){
         narrowCtrl.message = "Nothing found!";
         return [];
       }
+      return filtered;
     };
 
     narrowCtrl.remove = function(index){
