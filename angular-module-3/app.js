@@ -12,7 +12,7 @@
     var narrowCtrl = this;
     narrowCtrl.narrow = function(){
       console.log("clicked");
-      MenuSearchService.getMatchedMenuItems(narrowCtrl.searchTerm)
+      MenuSearchService.getMatchedMenuItems()
       .then(function(response){
         narrowCtrl.found = filterDown(response.data.menu_items);
       })
@@ -22,7 +22,9 @@
     };
 
     function filterDown(array){
-      return $filter("filter")(array, {description:narrowCtrl.searchTerm});
+      if(narrowCtrl.searchTerm){
+        return $filter("filter")(array, {description:narrowCtrl.searchTerm});
+      }
     };
 
     narrowCtrl.remove = function(index){
@@ -35,7 +37,7 @@
   function MenuSearchService($http, ApiBasePath){
     var service = this;
     var items = [];
-    service.getMatchedMenuItems = function(searchTerm){
+    service.getMatchedMenuItems = function(){
         return  $http({
           method: "GET",
           url: (ApiBasePath + "/menu_items.json")
