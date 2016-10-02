@@ -22,10 +22,12 @@
     };
 
     function filterDown(array){
-      var filtered;
+      var filtered = [];
       if(narrowCtrl.searchTerm){
         filtered =  $filter("filter")(array, {description:narrowCtrl.searchTerm});
-      }if(filtered.length == 0){
+      }
+
+      if(filtered.length == 0){
         narrowCtrl.message = "Nothing found!";
         return [];
       }
