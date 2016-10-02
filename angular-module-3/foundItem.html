@@ -6,7 +6,7 @@
   </tr>
   <tr ng-repeat="item in foundItems">
     <td >
-      <button ng-click="foundItemsCtrl.remove({index:$index})" class="btn btn-primary">Don't want this one!</button>
+      <button ng-click="onRemove({index:$index})" class="btn btn-primary">Don't want this one!</button>
     </td>
     <td>{{"("+item.short_name+")"}}</td>
     <td>{{item.name}}</td>
