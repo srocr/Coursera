@@ -48,7 +48,7 @@
     var ddo = {
       templateUrl: "foundItem.html",
       scope:{
-        items : "<",
+        foundItems : "<",
         onRemove : "&"
       }/*,
       controller: FoundItemsController,
