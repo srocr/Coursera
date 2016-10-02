@@ -10,6 +10,7 @@
 
   function NarrowItDownController(MenuSearchService, $filter){
     var narrowCtrl = this;
+    narrowCtrl.message = "";
     narrowCtrl.narrow = function(){
       MenuSearchService.getMatchedMenuItems()
       .then(function(response){
