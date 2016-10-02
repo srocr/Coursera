@@ -24,6 +24,8 @@
     function filterDown(array){
       if(narrowCtrl.searchTerm){
         return $filter("filter")(array, {description:narrowCtrl.searchTerm});
+      }else{
+        return [];
       }
     };
 
